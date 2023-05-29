@@ -18,7 +18,7 @@ const AddUser = (props) => {
       return console.log(`Age must be bigger than 1`);
     }
 
-    console.log(enteredUsername, enteredAge);
+    props.onAddUser(enteredUsername, enteredAge);
     setEnteredUsername("");
     setEnteredAge("");
   };

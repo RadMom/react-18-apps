@@ -1,5 +1,7 @@
+//useSelector if we need some value from our state
+//useDispatch if we have some action which will change the state
 import { useSelector, useDispatch } from "react-redux";
-import { authActions } from "../store";
+import { authActions } from "../store/auth";
 
 import classes from "./Header.module.css";
 

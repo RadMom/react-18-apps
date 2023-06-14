@@ -1,56 +1,15 @@
-import { createSlice, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 
-//counter
-const initialCounterState = {
-    counter: 0,
-    showCounter: true,
-};
-
-const counterSlice = createSlice({
-    name: "counter",
-    initialState: initialCounterState,
-    reducers: {
-        increment(state) {
-            state.counter++;
-        },
-        decrement(state) {
-            state.counter--;
-        },
-        increase(state, action) {
-            state.counter = state.counter + action.payload;
-        },
-        toggleCounter(state) {
-            state.showCounter = !state.showCounter;
-        },
-    },
-});
-
-//authentication
-const initialAuthState = {
-    isAuthenticated: false,
-};
-
-const authSlice = createSlice({
-    name: "authentication",
-    initialState: initialAuthState,
-    reducers: {
-        login(state) {
-            state.isAuthenticated = true;
-        },
-        logout(state) {
-            state.isAuthenticated = false;
-        },
-    },
-});
+import counterReducer from "./counter"; //we wxport counterReducer from counter.js
+import authReducer from "./auth"; //we wxport authReducer from auth.js
+//We only need reducers that's why we export counterSlice.reducer in counter.js
+//We also need reducers that's why we export authSlice.reducer in auth.js
 
 const store = configureStore({
     reducer: {
-        counter: counterSlice.reducer,
-        auth: authSlice.reducer,
+        counter: counterReducer, //If we export counterSlice from counter.js this will be counterSlice.reducer
+        auth: authReducer, //If we export authReducer from auth.js this will be authReducer.reducer
     },
 });
-
-export const counterActions = counterSlice.actions;
-export const authActions = authSlice.actions;
 
 export default store;

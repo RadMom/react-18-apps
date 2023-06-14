@@ -1,6 +1,8 @@
+//useSelector if we need some value from our state
+//useDispatch if we have some action which will change the state
 import { useSelector, useDispatch } from "react-redux";
 
-import { counterActions } from "../store/index";
+import { counterActions } from "../store/counter";
 import classes from "./Counter.module.css";
 
 const Counter = () => {

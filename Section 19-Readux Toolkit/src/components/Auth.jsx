@@ -1,7 +1,9 @@
 import classes from "./Auth.module.css";
 
-import { authActions } from "../store";
-import { useDispatch, useSelector } from "react-redux";
+import { authActions } from "../store/auth";
+//useSelector if we need some value
+//useDispatch if we have some action which will change the state
+import { useDispatch } from "react-redux";
 
 const Auth = () => {
     const dispatch = useDispatch();

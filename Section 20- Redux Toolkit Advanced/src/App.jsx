@@ -76,7 +76,9 @@ function App() {
                 "https://redux-advanced-ad133-default-rtdb.europe-west1.firebasedatabase.app/redux.json",
                 {
                     method: "PUT",
-                    body: JSON.stringify(cart),
+                    body: JSON.stringify({ items: cart.items, totalQuantity: cart.totalQuantity }),
+                    //If we JSON.stringify(cart) cart.changed will stay that's why send
+                    //JSON.stringify({ items: cart.items, totalQuantity: cart.totalQuantity }),
                 }
             );
 

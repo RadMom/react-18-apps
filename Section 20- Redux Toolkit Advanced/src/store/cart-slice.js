@@ -10,7 +10,8 @@ const cartSlice = createSlice({
     reducers: {
         //Need this reducer for fetchingData in App.jsx
         replaceCartData(state, action) {
-            state.items = action.payload.items;
+            //If we have items when fetching data it will save it as undefined that's why we need ||[]
+            state.items = action.payload.items || [];
             state.totalQuantity = action.payload.totalQuantity;
         },
         addItemToCart(state, action) {

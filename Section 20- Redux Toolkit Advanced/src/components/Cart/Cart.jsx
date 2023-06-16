@@ -7,7 +7,7 @@ import classes from "./Cart.module.css";
 
 const Cart = (props) => {
     const cartItems = useSelector((state) => state.cart.items);
-    console.log(cartItems);
+    
 
     return (
         <Card className={classes.cart}>
@@ -26,6 +26,7 @@ const Cart = (props) => {
                     />
                 ))}
             </ul>
+            <button>Order</button>
         </Card>
     );
 };

@@ -5,14 +5,21 @@ const cartSlice = createSlice({
     initialState: {
         items: [],
         totalQuantity: 0,
+        changed: false,
     },
     reducers: {
+        //Need this reducer for fetchingData in App.jsx
+        replaceCartData(state, action) {
+            state.items = action.payload.items;
+            state.totalQuantity = action.payload.totalQuantity;
+        },
         addItemToCart(state, action) {
             const newItem = action.payload;
             const existingItem = state.items.find((item) => item.id === newItem.id);
 
             //We can add only 1 item!!!
             state.totalQuantity++;
+            state.changed = true; //Must change this to true - if (cart.changed) then sendCartData in App.jsx
             if (!existingItem) {
                 state.items.push({
                     id: newItem.id,

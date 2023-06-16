@@ -37,6 +37,7 @@ const cartSlice = createSlice({
             const id = action.payload;
             const existingItem = state.items.find((item) => item.id === id);
             state.totalQuantity--;
+            state.changed = true; //Must change this to true - if (cart.changed) then sendCartData in App.jsx
             if (existingItem.quantity === 1) {
                 state.items = state.items.filter((item) => item.id !== id); //return an array with items with !==ids
             } else {

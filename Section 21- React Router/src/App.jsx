@@ -13,6 +13,7 @@ import RootLayout from "./layouts/RootLayout";
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import ErrorPage from "./pages/ErrorPage";
+import ProductDetails from "./pages/ProductDetails";
 
 const routeDefinitions = createRoutesFromElements(
     <Route
@@ -27,6 +28,10 @@ const routeDefinitions = createRoutesFromElements(
         <Route
             path="/products"
             element={<ProductsPage />}
+        />
+        <Route
+            path="/products/:productId"
+            element={<ProductDetails />}
         />
     </Route>
 );

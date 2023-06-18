@@ -9,10 +9,25 @@ const MainNavigation = () => {
             <nav>
                 <ul className={classes.list}>
                     <li>
-                        <NavLink to="/">Home Page</NavLink>
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) => (isActive ? classes.active : undefined)}
+                            end
+                            // style={({ isActive }) => ({
+                            //     color: isActive ? "red" : "blue",
+                            // })}
+                        >
+                            Home Page
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/products">Products Page</NavLink>
+                        <NavLink
+                            to="/products"
+                            className={({ isActive }) => (isActive ? classes.active : undefined)}
+                            // end
+                        >
+                            Products Page
+                        </NavLink>
                     </li>
                 </ul>
             </nav>

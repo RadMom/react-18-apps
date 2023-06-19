@@ -14,12 +14,13 @@ import EventsPage, { eventsLoader } from "./pages/EventsPage";
 import NewEventPage from "./pages/NewEventPage";
 import EventDetailPage from "./pages/EventDetailPage";
 import EditEventPage from "./pages/EditEventPage";
-
+import ErrorPage from "./pages/ErrorPage";
 
 const routesDefinition = createRoutesFromElements(
     <Route
         path="/"
         element={<RootLayout />}
+        errorElement={<ErrorPage />}
     >
         <Route
             index

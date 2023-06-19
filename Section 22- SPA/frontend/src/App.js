@@ -12,7 +12,7 @@ import EventsLayout from "./layouts/EventsLayout";
 import HomePage from "./pages/HomePage";
 import EventsPage, { eventsLoader } from "./pages/EventsPage";
 import NewEventPage from "./pages/NewEventPage";
-import EventDetailPage from "./pages/EventDetailPage";
+import EventDetailPage, { eventLoader } from "./pages/EventDetailPage";
 import EditEventPage from "./pages/EditEventPage";
 import ErrorPage from "./pages/ErrorPage";
 
@@ -41,12 +41,18 @@ const routesDefinition = createRoutesFromElements(
             />
             <Route
                 path=":eventId"
-                element={<EventDetailPage />}
-            />
-            <Route
-                path=":eventId/edit"
-                element={<EditEventPage />}
-            />
+                id="event-details" //We use it in useRouteLoaderData("event-details") where we need it
+                loader={eventLoader}
+            >
+                <Route
+                    index
+                    element={<EventDetailPage />}
+                />
+                <Route
+                    path="edit"
+                    element={<EditEventPage />}
+                />
+            </Route>
         </Route>
     </Route>
 );

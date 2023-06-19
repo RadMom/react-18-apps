@@ -11,8 +11,8 @@ import EventsLayout from "./layouts/EventsLayout";
 //pages
 import HomePage from "./pages/HomePage";
 import EventsPage, { eventsLoader } from "./pages/EventsPage";
-import NewEventPage from "./pages/NewEventPage";
-import EventDetailPage, { eventLoader } from "./pages/EventDetailPage";
+import NewEventPage, { newEventAction } from "./pages/NewEventPage";
+import EventDetailPage, { deleteEventAction, eventLoader } from "./pages/EventDetailPage";
 import EditEventPage from "./pages/EditEventPage";
 import ErrorPage from "./pages/ErrorPage";
 
@@ -38,6 +38,7 @@ const routesDefinition = createRoutesFromElements(
             <Route
                 path="new"
                 element={<NewEventPage />}
+                action={newEventAction}
             />
             <Route
                 path=":eventId"
@@ -47,6 +48,7 @@ const routesDefinition = createRoutesFromElements(
                 <Route
                     index
                     element={<EventDetailPage />}
+                    action={deleteEventAction}
                 />
                 <Route
                     path="edit"

@@ -8,13 +8,14 @@ import {
 //layouts
 import RootLayout from "./layouts/RootLayout";
 import EventsLayout from "./layouts/EventsLayout";
-//pages
+//pages + loaders & actions
 import HomePage from "./pages/HomePage";
 import EventsPage, { eventsLoader } from "./pages/EventsPage";
-import NewEventPage, { newEventAction } from "./pages/NewEventPage";
+import NewEventPage from "./pages/NewEventPage";
 import EventDetailPage, { deleteEventAction, eventLoader } from "./pages/EventDetailPage";
 import EditEventPage from "./pages/EditEventPage";
 import ErrorPage from "./pages/ErrorPage";
+import { manipulateEventAction } from "./components/EventForm";
 
 const routesDefinition = createRoutesFromElements(
     <Route
@@ -38,7 +39,7 @@ const routesDefinition = createRoutesFromElements(
             <Route
                 path="new"
                 element={<NewEventPage />}
-                action={newEventAction}
+                action={manipulateEventAction}
             />
             <Route
                 path=":eventId"
@@ -53,6 +54,7 @@ const routesDefinition = createRoutesFromElements(
                 <Route
                     path="edit"
                     element={<EditEventPage />}
+                    action={manipulateEventAction}
                 />
             </Route>
         </Route>

@@ -8,7 +8,10 @@ function EventForm({ method, event }) {
 
     const isSubmiting = navigation.state === "submitting" || navigation.state === "loading";
 
-    const data = useActionData();
+    const data = useActionData(); //Give us access to the data returned by our action
+    if(data&& data.errors){       // It depends what respone return to us
+        console.log(data.errors);
+    }
     function cancelHandler() {
         navigate("..");
     }
@@ -24,7 +27,7 @@ function EventForm({ method, event }) {
                     id="title"
                     type="text"
                     name="title"
-                    required
+                    // required
                     defaultValue={event && event.title}
                 />
             </p>
@@ -101,6 +104,10 @@ export async function manipulateEventAction({ request, params }) {
         },
         body: JSON.stringify(eventData),
     });
+
+    if (response.status === 422) {
+        return response;            //Can use it with useActionData()
+      }
 
     if (!response.ok) {
         throw json(

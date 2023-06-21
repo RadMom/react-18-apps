@@ -16,6 +16,7 @@ import EventDetailPage, { deleteEventAction, eventLoader } from "./pages/EventDe
 import EditEventPage from "./pages/EditEventPage";
 import ErrorPage from "./pages/ErrorPage";
 import { manipulateEventAction } from "./components/EventForm";
+import NewsletterPage, { newsletterAction } from "./pages/NewsletterPage";
 
 const routesDefinition = createRoutesFromElements(
     <Route
@@ -58,6 +59,11 @@ const routesDefinition = createRoutesFromElements(
                 />
             </Route>
         </Route>
+        <Route
+            path="newsletter"
+            element={<NewsletterPage />}
+            action={newsletterAction}
+        />
     </Route>
 );
 

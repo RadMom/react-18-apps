@@ -1,12 +1,1 @@
-{
-  "events": [
-    {
-      "title": "A new event",
-      "image": "https://cdn.muenchen-p.de/fl_progressive,q_65/.imaging/stk/responsive/teaser300/dms/va-2016/muenchner-christkindlmarkt/christkindlmarkt-marienplat-logo-hp/document/christkindlmarkt-marienplat-logo-hp.jpg",
-      "date": "2022-10-01",
-      "description": "Some awesome event!",
-      "id": "2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
-    }
-  ],
-  "users": []
-}
+{"events":[{"title":"Donkey lol","image":"https://www.boredpanda.com/blog/wp-content/uploads/2018/03/cute-miniature-baby-donkeys-fb20-png__700.jpg","date":"2023-06-29","description":"fsdgsadgasdgas","id":"6ff69be2-1d69-495c-9e10-8fa6fe5ca7ec"},{"title":"A new event","image":"https://cdn.muenchen-p.de/fl_progressive,q_65/.imaging/stk/responsive/teaser300/dms/va-2016/muenchner-christkindlmarkt/christkindlmarkt-marienplat-logo-hp/document/christkindlmarkt-marienplat-logo-hp.jpg","date":"2022-10-01","description":"Some awesome event!","id":"2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"}],"users":[{"email":"pepi@pepi.dev","password":"$2a$12$qGO41OuW1rOWmbPi2ZY3W.71u3X2XeuRkY6HOSKIAnc6SlQJaYhgC","id":"6c98121f-ae75-45f6-82c8-4d6b8e8d9589"}]}

@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useReducer, useContext, useRef } from "react";
+import AuthContext from "../../store/auth-context";
 
 import Card from "../UI/Card/Card";
 import Button from "../UI/Button/Button";
-import AuthContext from "../../store/auth-context";
 import Input from "../UI/Input/Input";
 import classes from "./Login.module.css";
 
+//email reducer function
 const emailReducer = (state, action) => {
     if (action.type === "USER_INPUT") {
         return { value: action.val, isValid: action.val.includes("@") };
@@ -16,6 +17,7 @@ const emailReducer = (state, action) => {
     return { value: "", isValid: false };
 };
 
+//password reducer function
 const passwordReducer = (state, action) => {
     if (action.type === "USER_INPUT") {
         return { value: action.val, isValid: action.val.trim().length > 6 };
